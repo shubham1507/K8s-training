@@ -1,0 +1,128 @@
+Docker desktop
+------
+content
+
+1. Docker, architecture, hands-on (Dockerfile ->Build->Run)
+(Pull the image from dockerhub and Run it)
+2. Kubernetes, Architecture- How docker image used in
+kubernetes to deploy an application
+
+3. Deployment, ReplicaSet, Pod and Service (YAML), Namespace
+4. Configuration data(Test, UAT, Demo, Stage), Service account, Commands and Args, Taints and Tolerations
+5. Multi Container Pods, INIT Containers and design patterns, (SideCar, Adapter and Ambassador)
+6. Oberservability(Health Probs, Monitoring, Rolling updates, Rollbacks,stratergies, CronJobs and Jobs),
+7. Ingress Controllers- Nginx Ingress, ALB, (Helm chart)
+8. State persistence - Storage areas, persistence volume
+9. Voting application - 3 tier app - 5 components(python, redies, .Net, postgress sql, React)
+--------------------
+
+Docker -> s/w platform -> Build, Test and Deploy -> Containers
+
+Traditional Deployments
+1. Physical h/w machine
+-> installation and configuration
+->Compatibility and depedency
+-> Inconsistabcies a/c envs
+-> Op support
+
+2. Docker
+
+Write a DOCKERFile -> Build the Docker file -> Docker Image -> Run the Docker Image
+-> Docker container
+
+Docker Arch
+--Client-server
+? What is cGroups and Namespaces
+? How an application getting CPU/memory fro h/w which is running on top
+of Docker
+?Diff between Copy and Add
+? what is the usage of CMD and ENTRYPOINT using seprate and 
+together
+----------------------------------------------------
+Day2-
+
+Docker Hands On
+
+1. Write a Dockerfile -> Build the Dockerfile -> Docker Image -> Push it in Docker Resgistry
+2. Pull a Docker Image from Docker Registry -> Run the Docker Image ->
+
+Exposing the dockerised application
+- Host n/w
+- Bridge n/w
+
+ADD vs COPY
+
+---------------
+Docker best practices(hands-on)
+
+1. Choose a light-weight(Alpine) based image
+2. Multi stage  docker file
+3. Minimize the Run instruction
+
+-----------------------
+
+K8s app orch
+
+Ecomm is said to cloud native iff it meets below
+1. Auto scaling
+2. Self healing
+3. Rolling update
+4. Rollback
+
+Microservice application
+
+Ecommerce
+
+Frontend -->V1
+Catalog service -> v1
+shopping cart -> v1
+Authentication ->v1
+logging service ->v1
+payment -> v1
+
+all above services have their own release cycles.
+
+For deploying and applicaton in kubernetes it should
+1. containerized application
+2. Cloud native
+3. Microservices
+
+###Arch
+1. API server - authentication/authorization using https
+
+--------------------------------
+Day-3
+
+For say creating k8s resources like
+Deployment, pods, services, ingress we have
+
+1. Declarative - YAML - to create/modify res
+2. Imperative - using kubectl(cmd based)--to delete
+
+Pod is a shared execution environment for running the container
+
+Group -> core
+Version -> v1
+Kind ->Res name
+****
+
+Pod 
+Group -> core
+Version -> v1
+Kind -> Pod
+
+Deployment
+Group -> apps
+Version -> v1
+Kind ->Deployment
+
+
+--------------
+
+To expose the container running in Pod
+we need a service which can interact to below
+on datacenter -> NodePOrt 
+on Cloud -> load balancer
+
+- for pod to pod communication 
+cluster IP service

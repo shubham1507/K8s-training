@@ -1,0 +1,27 @@
+employee:
+  name: Shubham
+  dept: Devops
+  skills: 
+    - ADO
+    - AKS
+    - python
+  projects:
+    - name: AXA
+      duration: 1yr
+    - name: TFS
+      duration: 1 yr
+
+---
+
+employee:
+  name: Arvind
+  dept: Devops
+  skills: 
+    - ADO
+    - AKS
+    - python
+  projects:
+    - name: AXA
+      duration: 1yr
+    - name: TFS
+      duration: 1 yr

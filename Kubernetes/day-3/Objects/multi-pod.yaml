@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod #Static Pods
+metadata:
+  name: multi-pod
+  labels:
+    app: multi
+spec:
+  containers:
+  - name: sample-pod
+    image: 839024/kubetraining:v1
+    ports:
+    - containerPort: 80
+
+  - name: sample-pod-busybox
+    image: busybox
+    ports:
+      - containerPort: 8080
