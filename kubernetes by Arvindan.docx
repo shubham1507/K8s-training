@@ -126,3 +126,25 @@ on Cloud -> load balancer
 
 - for pod to pod communication 
 cluster IP service
+
+-------------------Day4
+
+Deployment
+1. Service -> Deployment
+2. NodePOrt -> frontend -> service -> backend
+
+B. Namespace
+
+C. Imperative Commands
+--------
+
+* Commands and Args
+
+
+Controller manager make sure desired State == actual State of Pods
+
+--------------------
+
+1. scale in/out
+2. self healing
+3. Rolling updates/Rollback

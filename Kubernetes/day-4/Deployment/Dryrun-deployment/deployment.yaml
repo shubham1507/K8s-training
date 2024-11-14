@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dryrun-deployment
+spec:
+  replicas: 15
+  selector:
+    matchLabels:
+      app: my-dryrun-app # this app name should match with app name in metadata
+  template: #port info
+    metadata:
+      name: dryrun-pod
+      labels:
+        app: my-dryrun-app
+        type: pod
+    spec:
+      containers:
+        - name: dryrun-pod-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80

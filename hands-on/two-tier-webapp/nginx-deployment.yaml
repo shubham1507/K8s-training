@@ -1,0 +1,39 @@
+# nginx-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          volumeMounts:
+            - name: nginx-volume
+              mountPath: /usr/share/nginx/html
+          ports:
+            - containerPort: 80
+      volumes:
+        - name: nginx-volume
+          configMap:
+            name: nginx-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80

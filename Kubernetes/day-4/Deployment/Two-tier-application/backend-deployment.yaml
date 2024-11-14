@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodeapi
+  template:
+    metadata:
+      labels:
+        app: nodeapi
+    spec:    # This is where the container definition goes
+      containers:
+        - name: nodeapi-nginx
+          image: nodejs/devcontainer
+          ports:
+            - containerPort: 8080  # Corrected typo: 'containrPort' should be 'containerPort'

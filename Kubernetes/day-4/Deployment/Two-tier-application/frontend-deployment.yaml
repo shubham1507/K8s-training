@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ngApp
+  template:
+    metadata:
+      labels:
+        app: ngApp
+    spec:  # This is where the containers and other pod specs should go
+      containers:
+        - name: ngapp-nginx  # Container name should be lowercase
+          image: angular/ngcontainer
+          ports:
+            - containerPort: 80  # Corrected typo: 'containrPort' -> 'containerPort'
